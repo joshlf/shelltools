@@ -1,0 +1,11 @@
+#!/bin/bash
+
+F=$(mktemp)
+# see http://stackoverflow.com/a/13864829/836390
+if [ -z ${EDITOR+set} ]; then
+	# $EDITOR is unset
+	nano "$F"
+else
+	"$EDITOR" "$F"
+fi
+echo "$F"
